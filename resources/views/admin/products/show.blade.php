@@ -1,40 +1,39 @@
 @extends('layouts.admin')
+@section('product-active', 'active')
 @section('admin-content')
+    <div class="row">
+        <div class="col-lg-6">
+            <h2 class="page-header">
+                View Products
+            </h2>
 
-<div class="row">
-    <div class="col-lg-6">
-        <h2 class="page-header">
-            View Products
-        </h2>
-        <form>
-            <div class="form-group" >
-              <label for="title">Title <span style="color: red">*</span></label>
-              <input type="text" value="{{$prodict->title}}" class="form-control" name="title" id="title" placeholder="Enter Title">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" value="{{ $product->title }}" class="form-control" id="title" disabled
+                    placeholder="Enter Title">
             </div>
             <div class="form-group">
-              <label for="price">Price <span style="color: red">*</span></label>
-              <input type="text" value = "{{$product->slug}}"name="price" class="form-control" id="price" placeholder="Enter Price">
+                <label for="price">Price</label>
+                <input type="text" value="{{ $product->price }}" class="form-control" id="price" disabled
+                    placeholder="Enter Price">
             </div>
             <div class="form-group">
-                <label for="quantity">Quantity <span style="color: red">*</span></label>
-                <input type="text" value = "{{$product->quantity}}"name="quantity" class="form-control" id="quantity" placeholder="Enter Quantity">
-              </div>
-              <div class="form-group">
-                <label for="model">Model <span style="color: red">*</span></label>
-                <input type="text" value = "{{$product->model}}"name="model" class="form-control" id="model" placeholder="Enter Model">
-              </div>
-              <div class="form-group">
-                <label for="company">Company <span style="color: red">*</span></label>
-                <input type="text" value = "{{$product->company}}"name="company" class="form-control" id="company" placeholder="Enter Company">
-              </div>
+                <label for="quantity">Quantity</label>
+                <input type="text" value="{{ $product->quantity }}" class="form-control" id="quantity" disabled
+                    placeholder="Enter Quantity">
+            </div>
             <div class="form-group">
-                <label for="description">Description <span style="color: red">*</span></label>
-                <textarea class="form-control" name="description" id="description" rows="4">{{$product->description}}</textarea>
-              </div>
-              <div class="form-group">
-                <label for="image">Image:</label>
-                <img src="{{ asset($product->image) }}" />
-
-              </div>
-          </form>
-@endsection
+                <label for="model">Model</label>
+                <input type="text" value="{{ $product->model }}" class="form-control" id="model" disabled
+                    placeholder="Enter Model">
+            </div>
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" value="{{ $product->company }}" class="form-control" id="company" disabled
+                    placeholder="Enter Company">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" rows="4" disabled>{{ $product->description }}</textarea>
+            </div>
+        @endsection

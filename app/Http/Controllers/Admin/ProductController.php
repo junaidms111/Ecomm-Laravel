@@ -69,8 +69,35 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
+        $categories = Category::where('status', 1)->get();
+        return view('admin.products.edit', compact('product', 'categories'));
+    }
 
-        return view('admin.products.edit', compact('product'));
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'category_id' => ['required'],
+            'title' => ['required'],
+            'price' => ['required'],
+            'quantity' => ['required'],
+            'model' => ['required'],
+            'company' => ['required'],
+            'description' => ['required'],
+        ]);
+
+        $product = Product::find($id);
+        $product->title = $request->title;
+        $product->price = $request->price;
+        $product->quantity = $request->quantity;
+        $product->category_id = $request->category_id;
+        $product->model = $request->model;
+        $product->company = $request->company;
+        $product->description = $request->description;
+        $product->update();
+
+        toastr()->success('Product updated successfully!', 'Success');
+
+        return redirect()->back();
     }
 
     public function delete($id)

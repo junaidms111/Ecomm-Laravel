@@ -49,7 +49,7 @@
                     <td>
                         <a href="{{ route('products.show', ['id' => $product->id]) }}" class="btn btn-sm btn-info">View</a>
                         |
-                        <a href="{{ route('categories.edit', ['id' => $product->id]) }}"
+                        <a href="{{ route('products.edit', ['id' => $product->id]) }}"
                             class="btn btn-sm btn-primary">Edit</a> |
                         <a href="{{ route('products.delete', ['id' => $product->id]) }}" class="btn btn-sm btn-danger"
                             onclick="return confirm('Are you sure?')">Delete</a>
