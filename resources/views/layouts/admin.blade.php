@@ -162,8 +162,8 @@
                     <li>
                         <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Orders</a>
                     </li>
-                    <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Customers</a>
+                    <li class="@yield('customer-active')">
+                        <a href="{{route('customers.index')}}"><i class="fa fa-fw fa-desktop"></i> Customers</a>
                     </li>
                     <li>
                         <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Request for Qoute</a>
