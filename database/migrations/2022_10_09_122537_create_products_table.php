@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('company');
             $table->string('image')->nullable();
             $table->text('description');
+            $table->tinyinteger('status')->default(1);
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
