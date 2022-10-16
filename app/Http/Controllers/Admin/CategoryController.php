@@ -28,7 +28,7 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        $request ->validate([
+        $request->validate([
             'title' => ['required'],
             'slug' => ['required', 'unique:categories,slug'],
             'description' => ['required'],
@@ -48,7 +48,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::find($id);
-            return view('admin.categories.edit', compact('category'));
+        return view('admin.categories.edit', compact('category'));
     }
 
     public function update(Request $request, $id)
@@ -68,12 +68,11 @@ class CategoryController extends Controller
         toastr()->success('Product updated successfully!', 'Success');
 
         return redirect()->back();
-
     }
 
     public function show($id)
     {
-        $category = Category::find($id);
+        $category = Category::with('products')->find($id);
         return view('admin.categories.show', compact('category'));
     }
 

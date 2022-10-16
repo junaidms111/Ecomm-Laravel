@@ -106,6 +106,6 @@ class ProductController extends Controller
         $product->delete();
         toastr()->error('Product deleted successfully!', 'Success');
 
-        return redirect()->route('products.index');
+        return redirect()->back();
     }
 }

@@ -33,7 +33,7 @@
             @foreach ($products as $product)
                 <tr>
                     <th scope="row">{{ $loop->iteration }}</th>
-                    <td>{{ $product->category_id }}</td>
+                    <td>{{ $product->category->title }}</td>
                     <td>{{ $product->title }}</td>
                     <td>{{ $product->price }} PKR</td>
                     <td>{{ $product->quantity ? $product->quantity : 0 }}</td>

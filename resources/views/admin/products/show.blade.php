@@ -8,6 +8,11 @@
             </h2>
 
             <div class="form-group">
+                <label for="category">Category</label>
+                <input type="text" value="{{ $product->category->title }}" class="form-control" id="category" disabled
+                    placeholder="Enter Title">
+            </div>
+            <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" value="{{ $product->title }}" class="form-control" id="title" disabled
                     placeholder="Enter Title">
