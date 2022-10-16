@@ -12,6 +12,9 @@ Route::get('/admin/categories', [CategoryController::class, 'index'])->name('cat
 Route::get('/admin/categories/create', [CategoryController::class, 'create'])->name('categories.create');
 Route::get('/admin/categories/edit/{id}', [CategoryController::class, 'edit'])->name('categories.edit');
 Route::get('/admin/categories/show/{id}', [CategoryController::class, 'show'])->name('categories.show');
+Route::post('/admin/categories/store', [CategoryController::class, 'store'])->name('categories.store');
+Route::get('/admin/categories/delete/{id}', [CategoryController::class, 'delete'])->name('categories.delete');
+Route::post('/admin/categories/update/{id}', [CategoryController::class, 'update'])->name('categories.update');
 Route::get('/admin/categories/delete/{id}', [CategoryController::class, 'delete'])->name('categories.delete');
 
 Route::get('/admin/products', [ProductController::class, 'index'])->name('products.index');

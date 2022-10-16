@@ -20,6 +20,7 @@
         <th scope="col">#</th>
         <th scope="col">Title</th>
         <th scope="col">Slug</th>
+        <th scope="col">Description</th>
         <th scope="col">Created At</th>
         <th scope="col">Status</th>
         <th scope="col">Action</th>
@@ -31,6 +32,7 @@
             <th scope="row">{{ $loop->iteration }}</th>
             <td>{{ $category->title }}</td>
             <td>{{ $category->slug }}</td>
+            <td>{{ $category->description }}</td>
             <td> {{ \Carbon\Carbon::parse($category->created_at)->diffForhumans() }}</td>
             <td>
                 @if($category->status == 1)
