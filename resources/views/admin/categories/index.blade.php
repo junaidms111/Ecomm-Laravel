@@ -45,8 +45,12 @@
                             class="btn btn-sm btn-info">View</a> |
                         <a href="{{ route('categories.edit', ['id' => $category->id]) }}"
                             class="btn btn-sm btn-primary">Edit</a> |
-                        <a href="{{ route('categories.delete', ['id' => $category->id]) }}"
-                            class="btn btn-sm btn-danger">Delete</a>
+                        <a onclick="return confirm('Are you sure?')"
+                            href="{{ route('categories.delete', ['id' => $category->id]) }}"
+                            class="btn btn-sm btn-danger">Delete</a> |
+                        <a onclick="return confirm('Are you sure?')"
+                            href="{{ route('categories.delete', ['id' => $category->id]) }}"
+                            class="btn btn-sm btn-success">Change Status</a>
                     </td>
                 </tr>
             @endforeach
